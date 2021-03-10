@@ -1,0 +1,105 @@
+// === Common ===
+
+body {
+    max-width: 1920px;
+    font-family: "Myriad Pro", "Arial", sans-serif;
+    font-style: $fs-italic;
+    text-transform: uppercase;
+    background-color: #925212;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.padding-vertical {
+    padding-top: $padding-vertical;
+    padding-bottom: $padding-vertical;
+}
+
+// === /Common ===
+
+.header {
+    height: 100vh;
+    background: #000;
+
+    &__content-wrapper {
+        padding: $base * 16.5;
+        padding-bottom: 40vh;
+    }
+
+    // &__sections-wrapper {
+    //     display: flex;
+    // }
+
+    // // &__section {
+    // //     width: 33.3%;
+
+    // //     &--meat {
+    // //         background-image: url("../img/banner1.jpg");
+    // //     }
+    // // }
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+        width: $base * 67.5;
+        height: $base * 15;
+    }
+
+    &__list {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        margin: 0;
+        color: #fff;
+    }
+
+    &__item {
+        & + & {
+            margin-left: $base * 7.5;
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding: $base * 5;
+        font-weight: $fw-bold;
+        font-size: 22px;
+        color: #fff;
+        transition: $transition;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: $base * 4;
+            right: $base * 4;
+            bottom: $base * 2;
+            display: none;
+            height: 3px;
+            background-color: $primary;
+        }
+
+        &:hover {
+            color: $primary;
+        }
+
+        &:hover::after {
+            display: block;
+        }
+    }
+}
+
+// .menu {}
+
+// .about-us {}
+
+// .footer {}
