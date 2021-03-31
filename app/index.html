@@ -12,60 +12,63 @@
 
 <body>
     <header class="header">
-        <div class="header__content-wrapper">
-            <nav class="main-nav">
-                <div class="main-nav__logo">
-                    <a href="#" class="logo-link">
-                        <img src="img/logo.png" width="269" height="60" alt="LeRestaurante logo">
-                    </a>
-                </div>
+        <!-- <div class="header__content-wrapper"> -->
+        <nav class="main-nav">
+            <div class="main-nav__logo">
+                <a href="#" class="logo-link">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="img/logo-mobile.png">
+                        <img src="img/logo-desktop.png" alt="LeRestaurante logo">
+                    </picture>
+                </a>
+            </div>
 
-                <ul class="main-nav__list">
-                    <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">price list</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">opening hours</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">about us</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">contacts</a>
-                    </li>
-                </ul>
-            </nav>
-            <h1 class="visually-hidden">LeRestaurante</h1>
-            <div class="header__sections-wrapper">
+            <ul class="main-nav__list">
+                <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">price list</a>
+                </li>
+                <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">opening hours</a>
+                </li>
+                <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">about us</a>
+                </li>
+                <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">contacts</a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="visually-hidden">LeRestaurante</h1>
+        <div class="header__sections-wrapper">
 
-                <div class="header__section header__section--meat">
-                    <div class="header-card header-card--meat">
-                        <div class="header-card__wrapper">
-                            <h2 class="header-card__title">For meat lovers</h2>
-                            <button class="header-card__button button">full menu</button>
-                        </div>
+            <div class="header__section header__section--meat">
+                <div class="header-card header-card--meat">
+                    <div class="header-card__wrapper">
+                        <h2 class="header-card__title">For meat lovers</h2>
+                        <button class="header-card__button button">full menu</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="header__section header__section--vegan">
-                    <div class="header-card header-card--vegan">
-                        <div class="header-card__wrapper">
-                            <h2 class="header-card__title">Vegetarian & Vegan</h2>
-                            <button class="header-card__button button">full menu</button>
-                        </div>
+            <div class="header__section header__section--vegan">
+                <div class="header-card header-card--vegan">
+                    <div class="header-card__wrapper">
+                        <h2 class="header-card__title">Vegetarian & Vegan</h2>
+                        <button class="header-card__button button">full menu</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="header__section header__section--secrets">
-                    <div class="header-card header-card--secrets">
-                        <div class="header-card__wrapper">
-                            <h2 class="header-card__title">see our secrets</h2>
-                            <button class="header-card__button button">take me there</button>
-                        </div>
+            <div class="header__section header__section--secrets">
+                <div class="header-card header-card--secrets">
+                    <div class="header-card__wrapper">
+                        <h2 class="header-card__title">see our secrets</h2>
+                        <button class="header-card__button button">take me there</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- </div> -->
     </header>
 
     <main>
@@ -156,8 +159,10 @@
         <section class="online-menu">
             <div class="online-menu__offer">
                 <div class="online-menu__img-wrapper">
-                    <img class="online-menu__img" src="img/pasta-desktop.jpg" width="452" height="300"
-                    alt="spaghetti with tomato">
+                    <picture>
+                        <source media="(max-width: 1000px)" srcset="img/pasta-mobile.jpg">
+                        <img class="online-menu__img" src="img/pasta-desktop.jpg" alt="spaghetti with tomato">
+                    </picture>
                 </div>
 
                 <div class="online-menu__info">
@@ -180,13 +185,15 @@
         </section>
 
         <section class="about-us padding-vertical">
-            <div class="about-us__wrapper">
-                <h2 class="about-us__title">Where to find us?</h2>
-                <div class="about-us__info">
-                    <p class="about-us__name">LeRestaurante</p>
-                    <p class="about-us__adress">Hršpic 128<br>Pardubice, 530 01</p>
+            <div class="about-us__inner-wrapper">
+                <div class="about-us__info-wrapper">
+                    <h2 class="about-us__title">Where to find us?</h2>
+                    <div class="about-us__info">
+                        <p class="about-us__name">LeRestaurante</p>
+                        <p class="about-us__adress">Hršpic 128<br>Pardubice, 530 01</p>
+                    </div>
+                    <a href="#" class="button button--shadow">show on a map</a>
                 </div>
-                <a href="#" class="button button--shadow">show on a map</a>
             </div>
         </section>
 
@@ -229,7 +236,7 @@
                 <h3 class="footer__title">sign up to our newsletter</h3>
                 <form class="footer__form" action="post">
                     <label class="visually-hidden" for="footer__input">e-mail address</label>
-                    <input class="footer__input id="footer__input" type="text" placeholder="e-mail address">
+                    <input class="footer__input id=" footer__input" type="text" placeholder="e-mail address">
                     <button class="footer__button button" type="submit">sign up</button>
                 </form>
             </div>

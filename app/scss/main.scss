@@ -240,6 +240,12 @@ input[type="radio"].visually-hidden {
             margin-right: 0;
             margin-bottom: $base * 8;
         }
+
+        @media (max-width: $breakpoints-xs) {
+            margin-bottom: 0;
+            width: $base * 44;
+            height: $base * 10;
+        }
     }
 
     &__list {
@@ -247,11 +253,24 @@ input[type="radio"].visually-hidden {
         flex-grow: 1;
         justify-content: center;
         color: $white;
+
+        @media (max-width: $breakpoints-sm) {
+            flex-grow: 0;
+            flex-direction: column;
+        }
     }
 
     &__item {
         &+& {
             margin-left: $base * 7;
+
+            @media (max-width: $breakpoints-sm) {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: $breakpoints-sm) {
+            margin-bottom: $base * 3;
         }
     }
 
@@ -280,6 +299,15 @@ input[type="radio"].visually-hidden {
 
         &:hover::after {
             display: block;
+
+            @media (max-width: $breakpoints-sm) {
+                display: none;
+            }
+        }
+
+        @media (max-width: $breakpoints-sm) {
+            padding: $base * 2;
+            font-size: $fs-xs;
         }
     }
 
@@ -291,6 +319,12 @@ input[type="radio"].visually-hidden {
         padding: $base * 5;
         width: 100%;
         background-color: $black;
+    }
+
+    @media (max-width: $breakpoints-sm) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: $base * 3;
     }
 }
 
@@ -322,6 +356,10 @@ input[type="radio"].visually-hidden {
 
         @media (max-width: $breakpoints-lg) {
             padding: $base * 10 $base * 18;
+        }
+
+        @media (max-width: $breakpoints-xs) {
+            padding: $base * 7 $base * 11;
         }
     }
 
@@ -374,6 +412,10 @@ input[type="radio"].visually-hidden {
         top: 30%;
         width: $base * 100;
         opacity: 0.9;
+    }
+
+    @media (max-width: $breakpoints-xs) {
+        width: $base * 70;
     }
 }
 
@@ -430,6 +472,11 @@ input[type="radio"].visually-hidden {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: $base * 110;
+    }
+
+    @media (max-width: $breakpoints-xs) {
+        width: $base * 75;
     }
 }
 
@@ -507,6 +554,20 @@ input[type="radio"].visually-hidden {
         display: flex;
         padding: $base 0;
     }
+
+    @media (max-width: $breakpoints-xs) {
+        padding: $base * 4 $base * 5;
+        width: $base * 78;
+
+        &--1,
+        &--2,
+        &--3,
+        &--4,
+        &--5,
+        &--6 {
+            background: none;
+        }
+    }
 }
 
 .online-menu {
@@ -521,6 +582,12 @@ input[type="radio"].visually-hidden {
         position: relative;
         display: flex;
         height: $base * 75;
+
+        @media (max-width: $breakpoints-md) {
+            flex-direction: column;
+            width: $base * 78;
+            height: auto;
+        }
     }
 
     &__img-wrapper {
@@ -536,6 +603,10 @@ input[type="radio"].visually-hidden {
             width: $base * 18;
             height: $base * 18;
             background-color: $white;
+
+            @media (max-width: $breakpoints-md) {
+                display: none;
+            }
         }
 
         &::after {
@@ -548,6 +619,15 @@ input[type="radio"].visually-hidden {
             width: $base * 18;
             height: $base * 18;
             background-color: $white;
+
+            @media (max-width: $breakpoints-md) {
+                display: none;
+            }
+        }
+
+        @media (max-width: $breakpoints-md) {
+            width: 310px;
+            height: 310px;
         }
     }
 
@@ -562,6 +642,12 @@ input[type="radio"].visually-hidden {
             radial-gradient(circle at bottom left, $white $base * 10, $bg-light 0) bottom left;
         background-size: 50% 50%;
         background-repeat: no-repeat;
+
+        @media (max-width: $breakpoints-md) {
+            margin-left: auto;
+            max-width: $base * 80;
+            background: none;
+        }
     }
 
     &__info-inner {
@@ -574,13 +660,18 @@ input[type="radio"].visually-hidden {
         background-size: 51% 51%;
         background-repeat: no-repeat;
 
-        // @media (max-width: $breakpoints-xxl) {
-        //     padding-bottom: $base * 21.5;
-        // }
+        @media (max-width: $breakpoints-md) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: $base * 5.5;
+            text-align: center;
+            background: none;
 
-        // @media (max-width: $breakpoints-xl) {
-        //     padding-bottom: $base * 29;
-        // }
+            a {
+                align-self: start;
+            }
+        }
     }
 
     &__title {
@@ -607,7 +698,7 @@ input[type="radio"].visually-hidden {
 
     &__next {
         position: absolute;
-        right: -$base * 25;
+        right: -$base * 30;
         display: flex;
         align-items: center;
         height: $base * 8;
@@ -630,6 +721,11 @@ input[type="radio"].visually-hidden {
             bottom: $base * 14;
             z-index: 10;
         }
+
+        @media (max-width: $breakpoints-md) {
+            right: $base * 5;
+            bottom: $base * 7;
+        }
     }
 
     &__next-link {
@@ -643,12 +739,21 @@ input[type="radio"].visually-hidden {
             transform: scale(1.05);
         }
     }
+
+    @media (max-width: $breakpoints-md) {
+        width: $base * 78;
+    }
 }
 
 .about-us {
     background: url("../img/about_us_bg.jpg") center/cover no-repeat;
 
-    &__wrapper {
+    &__inner-wrapper {
+        margin: 0 auto;
+        padding: 0 $base * 3;
+    }
+
+    &__info-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -662,6 +767,11 @@ input[type="radio"].visually-hidden {
             radial-gradient(circle at bottom left, transparent $base * 9, $white 0) bottom left;
         background-size: 51% 51%;
         background-repeat: no-repeat;
+
+        @media (max-width: $breakpoints-sm) {
+            padding: $base * 8 $base * 4;
+            max-width: $base * 100;
+        }
     }
 
     &__title {
@@ -669,6 +779,11 @@ input[type="radio"].visually-hidden {
         font-weight: $fw-regular;
         font-size: $fs-lg;
         color: $black;
+
+        @media (max-width: $breakpoints-sm) {
+            margin-bottom: $base * 4;
+            font-size: $fs-sm;
+        }
     }
 
     &__info {
@@ -677,6 +792,12 @@ input[type="radio"].visually-hidden {
         margin: 0 auto $base * 8;
         width: 100%;
         text-transform: none;
+
+        @media (max-width: $breakpoints-sm) {
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto $base * 4;
+        }
     }
 
     &__name {
@@ -692,6 +813,13 @@ input[type="radio"].visually-hidden {
         background-position: left;
         background-size: $base * 16 $base * 11;
         background-repeat: no-repeat;
+
+        @media (max-width: $breakpoints-sm) {
+            margin-bottom: $base * 4;
+            padding: 0;
+            width: auto;
+            background: none;
+        }
     }
 
     &__adress {
@@ -699,6 +827,12 @@ input[type="radio"].visually-hidden {
         width: 45%;
         font-size: $fs-sm;
         color: $black;
+
+        @media (max-width: $breakpoints-sm) {
+            padding-left: 0;
+            width: auto;
+            text-align: center;
+        }
     }
 }
 
@@ -727,11 +861,23 @@ input[type="radio"].visually-hidden {
             margin-bottom: $base * 10;
             width: auto;
         }
+
+        @media (max-width: $breakpoints-xs) {
+            flex-direction: column;
+        }
     }
 
     &__links-block {
         &+& {
             margin-left: $base * 17;
+
+            @media (max-width: $breakpoints-xs) {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: $breakpoints-xs) {
+            margin-bottom: $base * 5;
         }
     }
 
@@ -763,6 +909,10 @@ input[type="radio"].visually-hidden {
         flex-direction: column;
         align-items: center;
         width: 50%;
+
+        @media (max-width: $breakpoints-xs) {
+            width: auto;
+        }
     }
 
     &__form {
@@ -770,6 +920,10 @@ input[type="radio"].visually-hidden {
         justify-content: space-between;
         margin: $base * 5 0;
         min-width: $base * 85;
+
+        @media (max-width: $breakpoints-xs) {
+            min-width: $base * 75;
+        }
     }
 
     &__input {
@@ -788,5 +942,9 @@ input[type="radio"].visually-hidden {
             color: $white;
             opacity: 0.7;
         }
+    }
+
+    @media (max-width: $breakpoints-xs) {
+        padding: $base * 10;
     }
 }
