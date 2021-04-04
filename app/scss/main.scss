@@ -4,16 +4,6 @@
     box-sizing: border-box;
 }
 
-// html {
-//     @media (max-width: $breakpoints-xxl) {
-//         font-size: 14px;
-//     }
-
-//     @media (max-width: $breakpoints-xl) {
-//         font-size: 13px;
-//     }
-// }
-
 body {
     margin: 0 auto;
     max-width: 1920px;
@@ -137,10 +127,18 @@ input[type="radio"].visually-hidden {
 
             &:hover {
                 background-image: url("../img/grill.jpg");
+
+                @media (max-width: $breakpoints-sm) {
+                    background-image: linear-gradient($black, transparent 25%, transparent 60%, $black), url("../img/grill-mobile.jpg");
+                }
             }
 
             @media (max-width: $breakpoints-lg) {
                 width: 100%;
+            }
+
+            @media (max-width: $breakpoints-sm) {
+                background-image: linear-gradient($black, transparent 25%, transparent 60%, $black), url("../img/grill-mobile.jpg");
             }
         }
 
@@ -183,12 +181,20 @@ input[type="radio"].visually-hidden {
 
             &:hover {
                 background-image: url("../img/vegan.jpg");
+
+                @media (max-width: $breakpoints-sm) {
+                    background-image: linear-gradient($black, transparent 25%, transparent 60%, $black), url("../img/vegan-mobile.jpg");
+                }
             }
 
             @media (max-width: $breakpoints-lg) {
                 left: 0;
                 clip-path: none;
                 width: 100%;
+            }
+
+            @media (max-width: $breakpoints-sm) {
+                background-image: linear-gradient($black, transparent 25%, transparent 60%, $black), url("../img/vegan-mobile.jpg");
             }
         }
 
@@ -199,10 +205,18 @@ input[type="radio"].visually-hidden {
 
             &:hover {
                 background-image: url("../img/secrets.jpg");
+
+                @media (max-width: $breakpoints-sm) {
+                    background-image: linear-gradient($black, transparent 25%, transparent 60%, $black), url("../img/secrets-mobile.jpg");
+                }
             }
 
             @media (max-width: $breakpoints-lg) {
                 width: 100%;
+            }
+
+            @media (max-width: $breakpoints-sm) {
+                background-image: linear-gradient($black, transparent 25%, transparent 60%, $black), url("../img/secrets-mobile.jpg");
             }
         }
 
@@ -228,11 +242,11 @@ input[type="radio"].visually-hidden {
     max-width: $base * 375;
 
     &__logo {
-        margin-right: $base * 87;
+        margin-right: $base * 80;
         width: $base * 67;
         height: $base * 15;
 
-        @media (max-width: $breakpoints-xxl) {
+        @media (max-width: $breakpoints-xl) {
             margin-right: $base * 20;
         }
 
@@ -245,6 +259,16 @@ input[type="radio"].visually-hidden {
             margin-bottom: 0;
             width: $base * 44;
             height: $base * 10;
+        }
+    }
+
+    &__logo-img {
+        width: 269px;
+        height: 60px;
+
+        @media (max-width: $breakpoints-xs) {
+            width: 175px;
+            height: 39px;
         }
     }
 
@@ -421,6 +445,7 @@ input[type="radio"].visually-hidden {
 
 .menu {
     margin: 0 auto;
+    padding-top: $base * 20;
     width: $base * 225;
 
     &__title {
@@ -456,10 +481,6 @@ input[type="radio"].visually-hidden {
         grid-template-columns: 1fr 1fr;
         margin-bottom: $base * 22;
         gap: $base * 10 $base * 10;
-
-        @media (max-width: $breakpoints-xl) {
-            margin-bottom: 0;
-        }
 
         @media (max-width: $breakpoints-md) {
             display: flex;
@@ -570,6 +591,56 @@ input[type="radio"].visually-hidden {
     }
 }
 
+.gallery {
+    margin-bottom: $base * 20;
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+
+        a {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                border: 1px solid $primary;
+                border-radius: 100%;
+                width: $base * 15;
+                height: $base * 15;
+                background-image: url("../img/search.svg");
+                background-position: center;
+                background-size: $base * 10;
+                background-repeat: no-repeat;
+                background-color: rgba(0, 0, 0, 0.8);
+                opacity: 0;
+                transform: translate(-50%, -50%);
+                transition: $transition;
+            }
+
+            &:hover::after {
+                opacity: 0.7;
+            }
+        }
+
+        @media (max-width: $breakpoints-md) {
+            width: $base * 120;
+        }
+
+        @media (max-width: $breakpoints-xs) {
+            width: $base * 80;
+        }
+    }
+
+    &__img {
+        display: block;
+    }
+}
+
 .online-menu {
     position: relative;
     display: flex;
@@ -579,14 +650,18 @@ input[type="radio"].visually-hidden {
     width: $base * 225;
 
     &__offer {
-        position: relative;
-        display: flex;
-        height: $base * 75;
+        display: none;
 
-        @media (max-width: $breakpoints-md) {
-            flex-direction: column;
-            width: $base * 78;
-            height: auto;
+        &--active {
+            position: relative;
+            display: flex;
+            height: $base * 75;
+
+            @media (max-width: $breakpoints-md) {
+                flex-direction: column;
+                width: $base * 78;
+                height: auto;
+            }
         }
     }
 
@@ -624,6 +699,11 @@ input[type="radio"].visually-hidden {
                 display: none;
             }
         }
+    }
+
+    &__img {
+        width: 452px;
+        height: 300px;
 
         @media (max-width: $breakpoints-md) {
             width: 310px;
@@ -651,7 +731,11 @@ input[type="radio"].visually-hidden {
     }
 
     &__info-inner {
-        padding: $base * 5.5 $base * 21 $base * 12.5 $base * 23;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: $base * 5 $base * 21;
+        height: 100%;
         background:
             radial-gradient(circle at top left, transparent $base * 9, $white 0) top left,
             radial-gradient(circle at top right, transparent $base * 9, $white 0) top right,
@@ -682,18 +766,25 @@ input[type="radio"].visually-hidden {
     }
 
     &__subtitle {
-        margin-bottom: $base * 6;
+        margin-bottom: $base * 3;
         font-weight: $fw-regular;
         font-size: $fs-md;
         color: $text-dark;
     }
 
     &__description {
+        flex-grow: 2;
+        overflow: hidden;
         margin-bottom: $base * 6;
+        max-height: $base * 28;
         font-weight: $fw-regular;
         font-size: $fs-xs;
         text-transform: none;
         color: $info-secondary;
+    }
+
+    &__button {
+        margin-top: auto;
     }
 
     &__next {
@@ -718,7 +809,7 @@ input[type="radio"].visually-hidden {
 
         @media (max-width: $breakpoints-lg) {
             right: $base * 25;
-            bottom: $base * 14;
+            bottom: $base * 7;
             z-index: 10;
         }
 
@@ -728,13 +819,19 @@ input[type="radio"].visually-hidden {
         }
     }
 
-    &__next-link {
+    &__next-btn {
+        outline: none;
+        border: 0;
         padding: $base $base * 4 $base $base;
+        font-style: italic;
         font-size: $fs-xs;
+        text-transform: uppercase;
         color: $primary;
+        background-color: transparent;
         transition: $transition;
 
-        &:hover {
+        &:hover,
+        &:focus {
             color: darken($primary, 10%);
             transform: scale(1.05);
         }
@@ -833,6 +930,10 @@ input[type="radio"].visually-hidden {
             width: auto;
             text-align: center;
         }
+    }
+
+    @media (max-width: $breakpoints-sm) {
+        background: url("../img/about_us_bg-mobile.jpg");
     }
 }
 
@@ -942,6 +1043,10 @@ input[type="radio"].visually-hidden {
             color: $white;
             opacity: 0.7;
         }
+    }
+
+    @media (max-width: $breakpoints-sm) {
+        background: $text-dark;
     }
 
     @media (max-width: $breakpoints-xs) {

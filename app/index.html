@@ -5,20 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
+    <meta name="description" content="LeRestaurante">
+    <link rel="preload" href="fonts/MyriadPro-Bold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/MyriadPro-BoldIt.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/MyriadPro-Regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/MyriadPro-It.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="img/grill.jpg" as="image" media="(min-width: 801px)">
+    <link rel="preload" href="img/grill-mobile.jpg" as="image" media="(max-width: 800px)">
+    <link rel="preload" href="img/vegan.jpg" as="image" media="(min-width: 801px)">
+    <link rel="preload" href="img/vegan-mobile.jpg" as="image" media="(max-width: 800px)">
+    <link rel="preload" href="img/secrets.jpg" as="image" media="(min-width: 801px)">
+    <link rel="preload" href="img/secrets-mobile.jpg" as="image" media="(max-width: 800px)">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>LeRestaurante</title>
 </head>
 
 <body>
     <header class="header">
-        <!-- <div class="header__content-wrapper"> -->
         <nav class="main-nav">
             <div class="main-nav__logo">
                 <a href="#" class="logo-link">
                     <picture>
                         <source media="(max-width: 600px)" srcset="img/logo-mobile.png">
-                        <img src="img/logo-desktop.png" alt="LeRestaurante logo">
+                        <img class="main-nav__logo-img" src="img/logo-desktop.png" width="269" height="60"
+                            alt="LeRestaurante logo">
                     </picture>
                 </a>
             </div>
@@ -68,11 +79,10 @@
                 </div>
             </div>
         </div>
-        <!-- </div> -->
     </header>
 
     <main>
-        <section class="menu padding-vertical">
+        <section class="menu">
             <h2 class="menu__title">Daily menu</h2>
             <a href="#" class="menu__link">Show vegan menu only</a>
             <div class="menu__cards-wrapper">
@@ -156,12 +166,26 @@
                 </div>
             </div>
         </section>
+
+        <section class="gallery">
+            <div class="gallery__wrapper">
+                <a href="img/bbq.jpg"><img class="gallery__img" src="img/bbq.jpg" width="150" height="150" loading="lazy" alt=""></a>
+                <a href="img/trout.jpg"><img class="gallery__img" src="img/trout.jpg" width="150" height="150" loading="lazy" alt=""></a>
+                <a href="img/soup.jpg"><img class="gallery__img" src="img/soup.jpg" width="150" height="150" loading="lazy" alt=""></a>
+                <a href="img/chicken-with-potatoes.jpg"><img class="gallery__img" src="img/chicken-with-potatoes.jpg" width="150" height="150" loading="lazy" alt=""></a>
+                <a href="img/tomato-pasta.jpg"><img class="gallery__img" src="img/tomato-pasta.jpg" width="150" height="150" loading="lazy" alt=""></a>
+                <a href="img/beetrood.jpg"><img class="gallery__img" src="img/beetrood.jpg" width="150" height="150" loading="lazy" alt=""></a>
+
+            </div>
+        </section>
+
         <section class="online-menu">
-            <div class="online-menu__offer">
+            <div class="online-menu__offer online-menu__offer--active">
                 <div class="online-menu__img-wrapper">
                     <picture>
                         <source media="(max-width: 1000px)" srcset="img/pasta-mobile.jpg">
-                        <img class="online-menu__img" src="img/pasta-desktop.jpg" alt="spaghetti with tomato">
+                        <img class="online-menu__img" src="img/pasta-desktop.jpg" width="452" height="300" loading="lazy"
+                            alt="spaghetti with tomato">
                     </picture>
                 </div>
 
@@ -175,12 +199,57 @@
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
-                        <a href="#" class="button button--shadow">12$ - order</a>
+                        <a href="#" class="online-menu__button button button--shadow">12$ - order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="online-menu__offer">
+                <div class="online-menu__img-wrapper">
+                    <picture>
+                        <source media="(max-width: 1000px)" srcset="img/mushroom-soup-mobile.jpg">
+                        <img class="online-menu__img" src="img/mushroom-soup-desktop.jpg" width="452" height="300" loading="lazy"
+                            alt="mushroom soup">
+                    </picture>
+                </div>
+
+                <div class="online-menu__info">
+                    <div class="online-menu__info-inner">
+                        <h2 class="online-menu__title">Online menu</h2>
+                        <h3 class="online-menu__subtitle">Mushroom soup</h3>
+                        <p class="online-menu__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
+                        </p>
+                        <a href="#" class="online-menu__button button button--shadow">9$ - order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="online-menu__offer">
+                <div class="online-menu__img-wrapper">
+                    <picture>
+                        <source media="(max-width: 1000px)" srcset="img/potatoes-mobile.jpg">
+                        <img class="online-menu__img" src="img/potatoes-desktop.jpg" width="452" height="300" loading="lazy"
+                            alt="spaghetti with tomato">
+                    </picture>
+                </div>
+
+                <div class="online-menu__info">
+                    <div class="online-menu__info-inner">
+                        <h2 class="online-menu__title">Online menu</h2>
+                        <h3 class="online-menu__subtitle">Chicken with potatoes</h3>
+                        <p class="online-menu__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris.
+                        </p>
+                        <a href="#" class="online-menu__button button button--shadow">15$ - order</a>
                     </div>
                 </div>
             </div>
             <div class="online-menu__next">
-                <a href="#" class="online-menu__next-link">next offer</a>
+                <button class="online-menu__next-btn">next offer</button>
             </div>
         </section>
 
@@ -237,11 +306,14 @@
                 <form class="footer__form" action="post">
                     <label class="visually-hidden" for="footer__input">e-mail address</label>
                     <input class="footer__input id=" footer__input" type="text" placeholder="e-mail address">
-                    <button class="footer__button button" type="submit">sign up</button>
+                    <input class="footer__button button" type="submit" value="sign up">
                 </form>
             </div>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/main.min.js"></script>
 </body>
 
 </html>
