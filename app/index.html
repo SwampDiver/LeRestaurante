@@ -27,6 +27,8 @@
             <div class="main-nav__logo">
                 <a href="#" class="logo-link">
                     <picture>
+                        <source type="image/webp" media="(max-width: 600px)" srcset="img/webp/logo-mobile.webp">
+                        <source type="image/webp" srcset="img/webp/logo-desktop.webp">
                         <source media="(max-width: 600px)" srcset="img/logo-mobile.png">
                         <img class="main-nav__logo-img" src="img/logo-desktop.png" width="269" height="60"
                             alt="LeRestaurante logo">
@@ -169,12 +171,47 @@
 
         <section class="gallery">
             <div class="gallery__wrapper">
-                <a href="img/bbq.jpg"><img class="gallery__img" src="img/bbq.jpg" width="150" height="150" loading="lazy" alt=""></a>
-                <a href="img/trout.jpg"><img class="gallery__img" src="img/trout.jpg" width="150" height="150" loading="lazy" alt=""></a>
-                <a href="img/soup.jpg"><img class="gallery__img" src="img/soup.jpg" width="150" height="150" loading="lazy" alt=""></a>
-                <a href="img/chicken-with-potatoes.jpg"><img class="gallery__img" src="img/chicken-with-potatoes.jpg" width="150" height="150" loading="lazy" alt=""></a>
-                <a href="img/tomato-pasta.jpg"><img class="gallery__img" src="img/tomato-pasta.jpg" width="150" height="150" loading="lazy" alt=""></a>
-                <a href="img/beetrood.jpg"><img class="gallery__img" src="img/beetrood.jpg" width="150" height="150" loading="lazy" alt=""></a>
+                <a href="img/bbq.jpg">
+                    <picture>
+                        <source type="image/webp" srcset="img/webp/bbq.webp">
+                        <img class="gallery__img" src="img/bbq.jpg" width="150" height="150" loading="lazy" alt="">
+                    </picture>
+
+                </a>
+                <a href="img/trout.jpg">
+                    <picture>
+                        <source type="image/webp" srcset="img/webp/trout.webp">
+                        <img class="gallery__img" src="img/trout.jpg" width="150" height="150" loading="lazy" alt="">
+                    </picture>
+                </a>
+                <a href="img/soup.jpg">
+                    <picture>
+                        <source type="image/webp" srcset="img/webp/soup.webp">
+                        <img class="gallery__img" src="img/soup.jpg" width="150" height="150" loading="lazy" alt="">
+                    </picture>
+                </a>
+                <a href="img/chicken-with-potatoes.jpg">
+                    <picture>
+                        <source type="image/webp" srcset="img/webp/chicken-with-potatoes.webp">
+                        <img class="gallery__img" src="img/chicken-with-potatoes.jpg" width="150" height="150"
+                            loading="lazy" alt="">
+                        <picture>
+                            <source type="image/webp" srcset="img/webp/bbq.webp">
+                </a>
+                <a href="img/tomato-pasta.jpg">
+                    <picture>
+                        <source type="image/webp" srcset="img/webp/tomato-pasta.webp">
+                        <img class="gallery__img" src="img/tomato-pasta.jpg" width="150" height="150" loading="lazy"
+                            alt="">
+                    </picture>
+                </a>
+                <a href="img/beetrood.jpg">
+                    <picture>
+                        <source type="image/webp" srcset="img/webp/beetrood.webp">
+                    <img class="gallery__img" src="img/beetrood.jpg" width="150" height="150"
+                        loading="lazy" alt="">
+                    </picture>
+                    </a>
 
             </div>
         </section>
@@ -183,9 +220,11 @@
             <div class="online-menu__offer online-menu__offer--active">
                 <div class="online-menu__img-wrapper">
                     <picture>
+                        <source type="image/webp" media="(max-width: 1000px)" srcset="img/webp/pasta-mobile.webp">
+                        <source type="image/webp" srcset="img/webp/pasta-desktop.webp">
                         <source media="(max-width: 1000px)" srcset="img/pasta-mobile.jpg">
-                        <img class="online-menu__img" src="img/pasta-desktop.jpg" width="452" height="300" loading="lazy"
-                            alt="spaghetti with tomato">
+                        <img class="online-menu__img" src="img/pasta-desktop.jpg" width="452" height="300"
+                            loading="lazy" alt="spaghetti with tomato">
                     </picture>
                 </div>
 
@@ -207,9 +246,12 @@
             <div class="online-menu__offer">
                 <div class="online-menu__img-wrapper">
                     <picture>
+                        <source type="image/webp" media="(max-width: 1000px)"
+                            srcset="img/webp/mushroom-soup-mobile.webp">
+                        <source type="image/webp" srcset="img/webp/mushroom-soup-desktop.webp">
                         <source media="(max-width: 1000px)" srcset="img/mushroom-soup-mobile.jpg">
-                        <img class="online-menu__img" src="img/mushroom-soup-desktop.jpg" width="452" height="300" loading="lazy"
-                            alt="mushroom soup">
+                        <img class="online-menu__img" src="img/mushroom-soup-desktop.jpg" width="452" height="300"
+                            loading="lazy" alt="mushroom soup">
                     </picture>
                 </div>
 
@@ -229,9 +271,11 @@
             <div class="online-menu__offer">
                 <div class="online-menu__img-wrapper">
                     <picture>
+                        <source type="image/webp" media="(max-width: 1000px)" srcset="img/webp/potatoes-mobile.webp">
+                        <source type="image/webp" srcset="img/webp/potatoes-desktop.webp">
                         <source media="(max-width: 1000px)" srcset="img/potatoes-mobile.jpg">
-                        <img class="online-menu__img" src="img/potatoes-desktop.jpg" width="452" height="300" loading="lazy"
-                            alt="spaghetti with tomato">
+                        <img class="online-menu__img" src="img/potatoes-desktop.jpg" width="452" height="300"
+                            loading="lazy" alt="spaghetti with tomato">
                     </picture>
                 </div>
 
@@ -305,7 +349,7 @@
                 <h3 class="footer__title">sign up to our newsletter</h3>
                 <form class="footer__form" action="post">
                     <label class="visually-hidden" for="footer__input">e-mail address</label>
-                    <input class="footer__input id=" footer__input" type="text" placeholder="e-mail address">
+                    <input class="footer__input" id="footer__input" type="text" placeholder="e-mail address">
                     <input class="footer__button button" type="submit" value="sign up">
                 </form>
             </div>

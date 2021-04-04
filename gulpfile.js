@@ -25,7 +25,7 @@ function html() {
 }
 
 function webpConvert() {
-  return src('app/img/content/*.{png,jpg}')
+  return src('app/img/*.{png,jpg}')
   .pipe(webp())
   .pipe(dest('app/img/webp'));
 }
