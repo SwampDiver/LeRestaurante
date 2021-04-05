@@ -602,6 +602,7 @@ input[type="radio"].visually-hidden {
 
         a {
             position: relative;
+            transition: $transition-slow;
 
             &::after {
                 content: "";
@@ -619,7 +620,12 @@ input[type="radio"].visually-hidden {
                 background-color: rgba(0, 0, 0, 0.8);
                 opacity: 0;
                 transform: translate(-50%, -50%);
-                transition: $transition;
+                transition: $transition-slow;
+            }
+
+            &:hover {
+                z-index: 5;
+                transform: scale(1.05);
             }
 
             &:hover::after {
