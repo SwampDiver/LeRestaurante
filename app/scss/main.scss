@@ -448,10 +448,15 @@ input[type="radio"].visually-hidden {
 
         @media (max-width: $breakpoints-xxl) {
             padding: $base * 7 $base * 11;
+            min-height: 200px;
         }
 
         @media (max-width: $breakpoints-lg) {
             padding: $base * 10 $base * 18;
+        }
+
+        @media (max-width: $breakpoints-sm) {
+            max-height: 150px;
         }
 
         @media (max-width: $breakpoints-xs) {
@@ -505,13 +510,13 @@ input[type="radio"].visually-hidden {
     }
 
     @media (max-width: $breakpoints-lg) {
-        top: 30%;
+        top: $base * 32;
         width: $base * 100;
         opacity: 0.9;
     }
 
     @media (max-width: $breakpoints-sm) {
-        top: 25%;
+        top: $base * 16;
     }
 
     @media (max-width: $breakpoints-xs) {
