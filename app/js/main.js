@@ -12,6 +12,14 @@ $(function() {
 	});
 });
 
+$(function() {
+    $('.main-nav__burger').click(function(event) {
+        $('.main-nav__burger,.main-nav__list').toggleClass('active');
+    });
+});
+
+
+
 const next = document.querySelector('.online-menu__next-btn');
 const slides = document.querySelectorAll('.online-menu__offer');
 

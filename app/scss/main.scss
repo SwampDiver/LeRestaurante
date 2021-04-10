@@ -222,7 +222,7 @@ input[type="radio"].visually-hidden {
 
         @media (max-width: $breakpoints-lg) {
             position: relative;
-            height: 450px;
+            height: $base * 113;
             opacity: 1;
         }
     }
@@ -255,20 +255,77 @@ input[type="radio"].visually-hidden {
             margin-bottom: $base * 8;
         }
 
-        @media (max-width: $breakpoints-xs) {
+        @media (max-width: $breakpoints-sm) {
             margin-bottom: 0;
+        }
+
+        @media (max-width: $breakpoints-xs) {
             width: $base * 44;
             height: $base * 10;
         }
     }
 
     &__logo-img {
-        width: 269px;
-        height: 60px;
+        width: $base * 67;
+        height: $base * 15;
 
         @media (max-width: $breakpoints-xs) {
-            width: 175px;
-            height: 39px;
+            width: $base * 44;
+            height: $base * 10;
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: $primary;
+            transition: all $transition;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        span {
+            position: absolute;
+            top: $base * 3;
+            width: 100%;
+            height: 5px;
+            background-color: $primary;
+            transition: all $transition;
+        }
+
+        &.active span {
+            transform: scale(0);
+        }
+
+        &.active::before {
+            top: $base * 3;
+            transform: rotate(45deg);
+        }
+
+        &.active::after {
+            bottom: $base * 3;
+            transform: rotate(-45deg);
+        }
+
+        @media (max-width: $breakpoints-sm) {
+            position: relative;
+            display: block;
+            width: $base * 7.5;
+            height: $base * 7.5;
+            cursor: pointer;
         }
     }
 
@@ -279,8 +336,20 @@ input[type="radio"].visually-hidden {
         color: $white;
 
         @media (max-width: $breakpoints-sm) {
-            flex-grow: 0;
+            position: absolute;
+            top: -$base * 100;
             flex-direction: column;
+            order: 3;
+            margin-top: $base * 4;
+            border-right: 1px solid $primary;
+            width: 100%;
+            text-align: right;
+            transition: $transition;
+
+            &.active {
+                position: relative;
+                top: 0;
+            }
         }
     }
 
@@ -294,7 +363,9 @@ input[type="radio"].visually-hidden {
         }
 
         @media (max-width: $breakpoints-sm) {
-            margin-bottom: $base * 3;
+            &:not(:last-child) {
+                margin-bottom: $base * 3;
+            }
         }
     }
 
@@ -328,11 +399,6 @@ input[type="radio"].visually-hidden {
                 display: none;
             }
         }
-
-        @media (max-width: $breakpoints-sm) {
-            padding: $base * 2;
-            font-size: $fs-xs;
-        }
     }
 
     @media (max-width: $breakpoints-lg) {
@@ -346,9 +412,9 @@ input[type="radio"].visually-hidden {
     }
 
     @media (max-width: $breakpoints-sm) {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: $base * 3;
+        flex-flow: wrap row;
+        justify-content: space-between;
+        padding: $base * 4 $base * 10;
     }
 }
 
@@ -708,12 +774,12 @@ input[type="radio"].visually-hidden {
     }
 
     &__img {
-        width: 452px;
-        height: 300px;
+        width: $base * 113;
+        height: $base * 75;
 
         @media (max-width: $breakpoints-md) {
-            width: 310px;
-            height: 310px;
+            width: $base * 77;
+            height: $base * 77;
         }
     }
 
@@ -791,6 +857,7 @@ input[type="radio"].visually-hidden {
 
     &__button {
         margin-top: auto;
+        margin-right: auto;
     }
 
     &__next {
@@ -816,7 +883,6 @@ input[type="radio"].visually-hidden {
         @media (max-width: $breakpoints-lg) {
             right: $base * 25;
             bottom: $base * 7;
-            z-index: 10;
         }
 
         @media (max-width: $breakpoints-md) {
@@ -950,7 +1016,7 @@ input[type="radio"].visually-hidden {
     &__wrapper {
         display: flex;
         margin: 0 auto;
-        max-width: 1170px;
+        max-width: $base * 293;
 
         @media (max-width: $breakpoints-lg) {
             display: flex;
@@ -1057,5 +1123,11 @@ input[type="radio"].visually-hidden {
 
     @media (max-width: $breakpoints-xs) {
         padding: $base * 10;
+    }
+}
+
+.modal {
+    &__map {
+        width: 100%;
     }
 }

@@ -16,6 +16,7 @@
     <link rel="preload" href="img/vegan-mobile.jpg" as="image" media="(max-width: 800px)">
     <link rel="preload" href="img/secrets.jpg" as="image" media="(min-width: 801px)">
     <link rel="preload" href="img/secrets-mobile.jpg" as="image" media="(max-width: 800px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>LeRestaurante</title>
@@ -33,6 +34,11 @@
                     </picture>
                 </a>
             </div>
+
+            <div class="main-nav__burger">
+                <span></span>
+            </div>
+
 
             <ul class="main-nav__list">
                 <li class="main-nav__item">
@@ -172,20 +178,23 @@
                 <a href="img/bbq.jpg">
                     <picture>
                         <source type="image/webp" srcset="img/webp/bbq.webp">
-                        <img class="gallery__img" src="img/bbq.jpg" width="150" height="150" loading="lazy" alt="barbecue">
+                        <img class="gallery__img" src="img/bbq.jpg" width="150" height="150" loading="lazy"
+                            alt="barbecue">
                     </picture>
 
                 </a>
                 <a href="img/trout.jpg">
                     <picture>
                         <source type="image/webp" srcset="img/webp/trout.webp">
-                        <img class="gallery__img" src="img/trout.jpg" width="150" height="150" loading="lazy" alt="trout">
+                        <img class="gallery__img" src="img/trout.jpg" width="150" height="150" loading="lazy"
+                            alt="trout">
                     </picture>
                 </a>
                 <a href="img/soup.jpg">
                     <picture>
                         <source type="image/webp" srcset="img/webp/soup.webp">
-                        <img class="gallery__img" src="img/soup.jpg" width="150" height="150" loading="lazy" alt="mushroom soup">
+                        <img class="gallery__img" src="img/soup.jpg" width="150" height="150" loading="lazy"
+                            alt="mushroom soup">
                     </picture>
                 </a>
                 <a href="img/chicken-with-potatoes.jpg">
@@ -206,10 +215,10 @@
                 <a href="img/beetrood.jpg">
                     <picture>
                         <source type="image/webp" srcset="img/webp/beetrood.webp">
-                    <img class="gallery__img" src="img/beetrood.jpg" width="150" height="150"
-                        loading="lazy" alt="beetroot salad">
+                        <img class="gallery__img" src="img/beetrood.jpg" width="150" height="150" loading="lazy"
+                            alt="beetroot salad">
                     </picture>
-                    </a>
+                </a>
 
             </div>
         </section>
@@ -303,7 +312,7 @@
                         <p class="about-us__name">LeRestaurante</p>
                         <p class="about-us__adress">Hršpic 128<br>Pardubice, 530 01</p>
                     </div>
-                    <a href="#" class="button button--shadow">show on a map</a>
+                    <a class="button button--shadow" href="#ex1" rel="modal:open">show on a map</a>
                 </div>
             </div>
         </section>
@@ -353,7 +362,13 @@
             </div>
         </div>
     </footer>
+
+    <div id="ex1" class="modal">
+        <iframe class="modal__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4309.944638913133!2d15.773824934841024!3d50.03555933938248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f17b84fc578b568!2sCaf%C3%A9%20Restaurant%20Pizzeria%20Galera!5e0!3m2!1sru!2sru!4v1617609839736!5m2!1sru!2sru" width="400" height="400" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/main.min.js"></script>
 </body>
