@@ -1,4 +1,4 @@
-# [LeRestaurante](https://swampdiver.github.io/lerestaurante/) - restaurant landing page
+# [LeRestaurante](https://swampdiver.github.io/LeRestaurante/) - restaurant landing page
 ***
 - Adaptive, cross browser, a11y
 - Sass/SCSS
