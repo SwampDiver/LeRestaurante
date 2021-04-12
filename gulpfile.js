@@ -83,9 +83,9 @@ function styles() {
 
 function build() {
   return src([
-    'app/css/style.min.css',
+    'app/css/*.css',
     'app/fonts/**/*',
-    'app/js/main.min.js'
+    'app/js/*.min.js'
   ], {base: 'app'})
   .pipe(dest('dist'));
 }
