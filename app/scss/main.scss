@@ -377,7 +377,8 @@ input[type="radio"].visually-hidden {
 
     &__link {
         position: relative;
-        padding: $base * 5;
+        display: block;
+        padding: $base * 3 0;
         font-weight: $fw-bold;
         font-size: $fs-md;
         color: $white;
@@ -386,12 +387,15 @@ input[type="radio"].visually-hidden {
         &::after {
             content: "";
             position: absolute;
-            left: $base * 4;
-            right: $base * 4;
-            bottom: $base * 2;
-            display: none;
+            left: 0;
+            bottom: 0;
+            width: 100%;
             height: $base;
             background-color: $primary;
+            opacity: 1;
+            transform: scale(0);
+            transform-origin: center;
+            transition: opacity 300ms, transform 300ms;
         }
 
         &:hover {
@@ -399,11 +403,15 @@ input[type="radio"].visually-hidden {
         }
 
         &:hover::after {
-            display: block;
+            transform: scale(1);
 
             @media (max-width: $breakpoints-sm) {
                 display: none;
             }
+        }
+
+        @media (max-width: $breakpoints-sm) {
+            padding: $base * 3 $base * 6;
         }
     }
 
@@ -760,7 +768,6 @@ input[type="radio"].visually-hidden {
             position: absolute;
             left: -$base * 8;
             top: -$base * 8;
-            z-index: 10;
             border-radius: 100%;
             width: $base * 18;
             height: $base * 18;
@@ -776,7 +783,6 @@ input[type="radio"].visually-hidden {
             position: absolute;
             left: -$base * 8;
             bottom: -$base * 8;
-            z-index: 10;
             border-radius: 100%;
             width: $base * 18;
             height: $base * 18;
